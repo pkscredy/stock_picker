@@ -35,6 +35,8 @@ def get_range_data(fromdate, to_date, val):
 
 
 def get_final_data(from_date, to_date, stock_data):
+    if len(stock_data) == 0:
+        sys.exit('No data available b/w given dates')
     from_date = min(stock_data)
     to_date = max(stock_data)
     delta = to_date - from_date
